@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b3088ed.css",
-    "main.js": "/static/js/main.bfc25581.js",
-    "static/js/453.a7d99afe.chunk.js": "/static/js/453.a7d99afe.chunk.js",
-    "index.html": "/index.html",
-    "main.3b3088ed.css.map": "/static/css/main.3b3088ed.css.map",
-    "main.bfc25581.js.map": "/static/js/main.bfc25581.js.map",
-    "453.a7d99afe.chunk.js.map": "/static/js/453.a7d99afe.chunk.js.map"
+    "main.css": "/create-with-Kalkut/static/css/main.3b3088ed.css",
+    "main.js": "/create-with-Kalkut/static/js/main.b7edc1a5.js",
+    "static/js/453.a7d99afe.chunk.js": "/create-with-Kalkut/static/js/453.a7d99afe.chunk.js",
+    "index.html": "/create-with-Kalkut/index.html",
+    "main.3b3088ed.css.map": "/create-with-Kalkut/static/css/main.3b3088ed.css.map",
+    "main.b7edc1a5.js.map": "/create-with-Kalkut/static/js/main.b7edc1a5.js.map",
+    "453.a7d99afe.chunk.js.map": "/create-with-Kalkut/static/js/453.a7d99afe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3b3088ed.css",
-    "static/js/main.bfc25581.js"
+    "static/js/main.b7edc1a5.js"
   ]
 }
