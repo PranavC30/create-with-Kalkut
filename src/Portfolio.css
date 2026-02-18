@@ -1,4 +1,10 @@
-/* Scroll Reveal Animations */
+.portfolio-container {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Fade in up animation for hero elements */
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -11,26 +17,8 @@
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+  animation: fade-in-up 0.8s ease-out;
   opacity: 0;
-}
-
-/* Section Reveal on Scroll - but NOT hero */
-section:not(.hero-section) {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.portfolio-container {
-  background-color: #000;
-  color: #fff;
-  min-height: 100vh;
 }
 
 /* Cursor Glow */
