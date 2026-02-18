@@ -166,28 +166,28 @@ const KalKutMinimalPortfolio = () => {
 
   const faqs = [
     {
-      question: "What services do you offer?",
-      answer: "We offer full-stack web development, mobile app development, UI/UX design, cloud solutions, and digital transformation consulting."
+      question: "What services do we offer?",
+      answer: "We offer comprehensive digital solutions including full-stack web development (React, Next.js, Node.js), mobile app development (React Native, Flutter), UI/UX design with user research and prototyping, cloud infrastructure setup and management (AWS, Azure), API development and integration, database design and optimization, and end-to-end digital transformation consulting. Our team specializes in building scalable, performant applications that drive real business results."
     },
     {
       question: "How long does a typical project take?",
-      answer: "Project timelines vary based on complexity. A simple website takes 2-4 weeks, while complex applications can take 2-6 months. We provide detailed timelines during discovery."
+      answer: "Project timelines vary based on scope and complexity. A simple landing page or portfolio website typically takes 2-4 weeks. Medium-complexity web applications with custom features take 6-10 weeks. Large-scale enterprise applications or mobile apps can take 3-6 months. We follow an agile methodology with regular sprints and milestones. During our discovery phase, we provide a detailed project timeline with clear deliverables and checkpoints to keep everything on track."
     },
     {
-      question: "What is your pricing model?",
-      answer: "We offer flexible pricing including fixed-price projects, hourly rates, and retainer models. Pricing depends on project scope, complexity, and timeline."
+      question: "What is our pricing model?",
+      answer: "We offer flexible pricing models to suit different project needs. Fixed-price projects work best for well-defined scopes with clear deliverables. Hourly rates (₹2000-5000/hour depending on expertise) are ideal for ongoing work or projects with evolving requirements. Monthly retainers provide dedicated development resources for long-term partnerships. We also offer equity partnerships for promising startups. All pricing includes project management, quality assurance, and deployment. We provide detailed quotes after understanding your requirements."
     },
     {
-      question: "Do you provide post-launch support?",
-      answer: "Yes! We offer comprehensive maintenance packages including bug fixes, updates, performance monitoring, and feature enhancements."
+      question: "Do we provide post-launch support?",
+      answer: "Absolutely! We offer comprehensive post-launch support and maintenance packages. This includes 24/7 monitoring and bug fixes, regular security updates and patches, performance optimization and scaling, feature enhancements and improvements, monthly analytics reports, priority support via email/phone, and backup and disaster recovery. We typically offer 30 days of free support post-launch, followed by flexible monthly or annual maintenance plans starting from ₹15,000/month."
     },
     {
-      question: "What technologies do you work with?",
-      answer: "We specialize in React, Next.js, Node.js, Python, AWS, and modern tech stacks. We choose the best technology based on your project needs."
+      question: "What technologies do we work with?",
+      answer: "We specialize in modern, battle-tested technologies. Frontend: React, Next.js, Vue.js, TypeScript, Tailwind CSS. Backend: Node.js, Express, Python, Django, FastAPI. Mobile: React Native, Flutter. Databases: PostgreSQL, MongoDB, Redis, Firebase. Cloud: AWS, Azure, Google Cloud, Vercel, Netlify. DevOps: Docker, Kubernetes, CI/CD pipelines, GitHub Actions. We stay updated with the latest tech trends and choose the best stack based on your specific project requirements, scalability needs, and budget."
     },
     {
-      question: "Can you work with our existing team?",
-      answer: "Absolutely! We seamlessly integrate with your team, following your workflows and communication preferences for smooth collaboration."
+      question: "Can we work with existing teams?",
+      answer: "Absolutely! We excel at collaborative work and seamlessly integrate with your existing development teams. We adapt to your workflows, coding standards, and communication preferences. Whether you use Jira, Slack, Microsoft Teams, or other tools, we fit right in. We can work as an extension of your team, taking ownership of specific modules or features, or provide specialized expertise in areas like performance optimization, architecture design, or UI/UX. We're experienced in remote collaboration across different time zones and maintain transparent communication throughout."
     }
   ];
 
