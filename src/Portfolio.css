@@ -15,8 +15,8 @@
   opacity: 0;
 }
 
-/* Section Reveal on Scroll */
-section {
+/* Section Reveal on Scroll - but NOT hero */
+section:not(.hero-section) {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
