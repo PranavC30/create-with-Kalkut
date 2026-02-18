@@ -177,7 +177,7 @@ const KalKutMinimalPortfolio = () => {
     },
     {
       question: "What is our pricing model?",
-      answer: "We offer flexible pricing models to suit different project needs. Fixed-price projects work best for well-defined scopes with clear deliverables. Hourly rates (₹2000-5000/hour depending on expertise) are ideal for ongoing work or projects with evolving requirements. Monthly retainers provide dedicated development resources for long-term partnerships. We also offer equity partnerships for promising startups. All pricing includes project management, quality assurance, and deployment. We provide detailed quotes after understanding your requirements."
+      answer: "We offer flexible pricing models to suit different project needs. Fixed-price projects work best for well-defined scopes with clear deliverables. Pricing depends on project complexity, features, and timeline. Generally, our projects start from ₹10,000 and scale based on requirements. Monthly retainers provide dedicated development resources for long-term partnerships. We also offer equity partnerships for promising startups. All pricing includes project management, quality assurance, and deployment. We provide detailed quotes after understanding your requirements."
     },
     {
       question: "Do we provide post-launch support?",
@@ -709,7 +709,7 @@ const KalKutMinimalPortfolio = () => {
                   {formStatus === 'sending' ? 'Sending...' : 'Send message'}
                 </button>
                 {formStatus === 'success' && (
-                  <p className="form-message success">Message sent successfully! ✓</p>
+                  <p className="form-message success">Message sent ✓</p>
                 )}
                 {formStatus === 'error' && (
                   <p className="form-message error">Failed to send. Please try again.</p>
