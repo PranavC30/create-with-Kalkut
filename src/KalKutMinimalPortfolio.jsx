@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import ReactGA from 'react-ga4';
+import WhatsAppWidget from './WhatsAppWidget';
 import './Portfolio.css';
 
 const KalKutMinimalPortfolio = () => {
@@ -410,6 +411,7 @@ const KalKutMinimalPortfolio = () => {
                 key={project.id}
                 onMouseEnter={() => setActiveProject(project.id)}
                 onMouseLeave={() => setActiveProject(null)}
+                onClick={() => navigate(`/project/${project.id}`)}
                 className="project-item"
                 style={{
                   opacity: 0,
@@ -732,6 +734,9 @@ const KalKutMinimalPortfolio = () => {
           </div>
         </div>
       </footer>
+
+      {/* WhatsApp Chat Widget */}
+      <WhatsAppWidget />
     </div>
   );
 };
