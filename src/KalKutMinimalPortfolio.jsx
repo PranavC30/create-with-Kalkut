@@ -709,7 +709,7 @@ const KalKutMinimalPortfolio = () => {
                   {formStatus === 'sending' ? 'Sending...' : 'Send message'}
                 </button>
                 {formStatus === 'success' && (
-                  <p className="form-message success">Message sent ✓</p>
+                  <p className="form-message success">Message sent</p>
                 )}
                 {formStatus === 'error' && (
                   <p className="form-message error">Failed to send. Please try again.</p>
