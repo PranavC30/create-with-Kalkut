@@ -3,11 +3,13 @@ import { ArrowUpRight, Mail, Github, Linkedin, ChevronDown, Code, Zap, Users, Aw
 import { TypeAnimation } from 'react-type-animation';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import ReactGA from 'react-ga4';
 import './Portfolio.css';
 
 const KalKutMinimalPortfolio = () => {
+  const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
   const [activeProject, setActiveProject] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -541,6 +543,7 @@ const KalKutMinimalPortfolio = () => {
                 key={post.id}
                 className="blog-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => navigate(`/blog/${post.id}`)}
               >
                 <div className="blog-image-wrapper">
                   <img src={post.image} alt={post.title} className="blog-image" />
@@ -554,10 +557,10 @@ const KalKutMinimalPortfolio = () => {
                   </div>
                   <h3 className="blog-title">{post.title}</h3>
                   <p className="blog-excerpt">{post.excerpt}</p>
-                  <a href="#blog" className="blog-read-more">
+                  <span className="blog-read-more">
                     Read more
                     <ArrowUpRight className="blog-arrow" />
-                  </a>
+                  </span>
                 </div>
               </article>
             ))}
