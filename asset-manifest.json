@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/create-with-Kalkut/static/css/main.e5152cf1.css",
+    "main.css": "/create-with-Kalkut/static/css/main.323e851f.css",
     "main.js": "/create-with-Kalkut/static/js/main.2bbc56c5.js",
     "static/js/453.a7d99afe.chunk.js": "/create-with-Kalkut/static/js/453.a7d99afe.chunk.js",
     "index.html": "/create-with-Kalkut/index.html",
-    "main.e5152cf1.css.map": "/create-with-Kalkut/static/css/main.e5152cf1.css.map",
+    "main.323e851f.css.map": "/create-with-Kalkut/static/css/main.323e851f.css.map",
     "main.2bbc56c5.js.map": "/create-with-Kalkut/static/js/main.2bbc56c5.js.map",
     "453.a7d99afe.chunk.js.map": "/create-with-Kalkut/static/js/453.a7d99afe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5152cf1.css",
+    "static/css/main.323e851f.css",
     "static/js/main.2bbc56c5.js"
   ]
 }
