@@ -10,30 +10,20 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
   border: none;
   color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
   transition: all 0.3s ease;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-  }
-  50% {
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
-  }
 }
 
 .whatsapp-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.5);
 }
 
 .whatsapp-widget.open .whatsapp-button {
@@ -65,7 +55,7 @@
 }
 
 .whatsapp-header {
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
   padding: 16px;
   display: flex;
   align-items: center;
@@ -147,7 +137,7 @@
 .whatsapp-start-chat {
   width: 100%;
   padding: 12px 20px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
   border: none;
   border-radius: 8px;
   color: #fff;
@@ -163,7 +153,7 @@
 
 .whatsapp-start-chat:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
 }
 
 /* Mobile Responsive */
