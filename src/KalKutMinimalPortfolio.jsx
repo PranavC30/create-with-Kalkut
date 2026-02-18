@@ -3,6 +3,8 @@ import { ArrowUpRight, Mail, Github, Linkedin, ChevronDown, Code, Zap, Users, Aw
 import { TypeAnimation } from 'react-type-animation';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import emailjs from '@emailjs/browser';
+import ReactGA from 'react-ga4';
 import './Portfolio.css';
 
 const KalKutMinimalPortfolio = () => {
@@ -12,11 +14,17 @@ const KalKutMinimalPortfolio = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeFAQ, setActiveFAQ] = useState(null);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formStatus, setFormStatus] = useState('');
   const heroRef = useRef(null);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const { ref: statsRef, inView: statsInView } = useInView({ threshold: 0.3, triggerOnce: true });
 
   useEffect(() => {
+    // Initialize Google Analytics
+    ReactGA.initialize('G-GWEYP7LRFZ');
+    ReactGA.send('pageview');
+
     // Loading animation
     setTimeout(() => setIsLoading(false), 1500);
 
@@ -204,8 +212,68 @@ const KalKutMinimalPortfolio = () => {
     }
   ];
 
+  const blogPosts = [
+    {
+      id: 1,
+      title: "Building Scalable React Applications",
+      excerpt: "Learn best practices for structuring large-scale React apps with performance in mind.",
+      date: "Feb 15, 2024",
+      readTime: "5 min read",
+      category: "Development",
+      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop&q=80"
+    },
+    {
+      id: 2,
+      title: "The Future of Web Development",
+      excerpt: "Exploring emerging trends and technologies shaping the next generation of web apps.",
+      date: "Feb 10, 2024",
+      readTime: "7 min read",
+      category: "Technology",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&q=80"
+    },
+    {
+      id: 3,
+      title: "UI/UX Design Principles That Matter",
+      excerpt: "Essential design principles every developer should know to create better user experiences.",
+      date: "Feb 5, 2024",
+      readTime: "6 min read",
+      category: "Design",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&q=80"
+    }
+  ];
+
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleFormChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus('sending');
+
+    // EmailJS configuration
+    emailjs.send(
+      'service_bz1u5km',
+      'template_246s3xr',
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      'OsOEngEWTID11A54v'
+    )
+    .then(() => {
+      setFormStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setFormStatus(''), 3000);
+    })
+    .catch(() => {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus(''), 3000);
+    });
   };
 
   return (
@@ -288,7 +356,7 @@ const KalKutMinimalPortfolio = () => {
       </section>
 
       {/* Stats Section with Counter Animation */}
-      <section id="stats" ref={statsRef} className={`stats-section ${visibleSections.has('stats') ? 'visible' : ''}`}>
+      <section id="stats" ref={statsRef} className={`stats-section ${statsInView ? 'visible' : ''}`}>
         <div className="section-container">
           <div className="stats-grid">
             {stats.map((stat, index) => {
@@ -462,6 +530,41 @@ const KalKutMinimalPortfolio = () => {
         </div>
       </section>
 
+      {/* Blog Section */}
+      <section id="blog" className={`blog-section ${visibleSections.has('blog') ? 'visible' : ''}`}>
+        <div className="section-container">
+          <h2 className="section-title-center">Latest Insights</h2>
+          <p className="section-subtitle-center">Thoughts on development, design, and technology</p>
+          <div className="blog-grid">
+            {blogPosts.map((post, index) => (
+              <article
+                key={post.id}
+                className="blog-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="blog-image-wrapper">
+                  <img src={post.image} alt={post.title} className="blog-image" />
+                  <span className="blog-category">{post.category}</span>
+                </div>
+                <div className="blog-content">
+                  <div className="blog-meta">
+                    <span className="blog-date">{post.date}</span>
+                    <span className="blog-divider">•</span>
+                    <span className="blog-read-time">{post.readTime}</span>
+                  </div>
+                  <h3 className="blog-title">{post.title}</h3>
+                  <p className="blog-excerpt">{post.excerpt}</p>
+                  <a href="#blog" className="blog-read-more">
+                    Read more
+                    <ArrowUpRight className="blog-arrow" />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className={`faq-section ${visibleSections.has('faq') ? 'visible' : ''}`}>
         <div className="section-container">
@@ -565,13 +668,49 @@ const KalKutMinimalPortfolio = () => {
             {/* Contact Form */}
             <div className="contact-form-container">
               <h3 className="form-title">Start a conversation</h3>
-              <form className="contact-form">
+              <form className="contact-form" onSubmit={handleFormSubmit}>
                 <div className="form-row">
-                  <input type="text" placeholder="Your name" className="form-input" />
-                  <input type="email" placeholder="Your email" className="form-input" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    placeholder="Your name" 
+                    className="form-input" 
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    required
+                  />
+                  <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Your email" 
+                    className="form-input"
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    required
+                  />
                 </div>
-                <textarea placeholder="Tell us about your project" rows="4" className="form-textarea" />
-                <button type="submit" className="form-submit">Send message</button>
+                <textarea 
+                  name="message"
+                  placeholder="Tell us about your project" 
+                  rows="4" 
+                  className="form-textarea"
+                  value={formData.message}
+                  onChange={handleFormChange}
+                  required
+                />
+                <button 
+                  type="submit" 
+                  className="form-submit"
+                  disabled={formStatus === 'sending'}
+                >
+                  {formStatus === 'sending' ? 'Sending...' : 'Send message'}
+                </button>
+                {formStatus === 'success' && (
+                  <p className="form-message success">Message sent successfully! ✓</p>
+                )}
+                {formStatus === 'error' && (
+                  <p className="form-message error">Failed to send. Please try again.</p>
+                )}
               </form>
             </div>
           </div>
